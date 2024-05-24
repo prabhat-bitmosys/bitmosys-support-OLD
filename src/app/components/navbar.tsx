@@ -34,26 +34,32 @@ const useStyles = makeStyles({
 // data for nav items
 const navlinkitems: NavLinkItem[] = [
   {
-    label: "Sole Trader",
-    link: "/sole-trader",
+    label: "Get Started",
+    link: "/",
     class: "mr-6 hover:text-stone-900",
     openInNewTab: false,
   },
   {
-    label: "Plans & Pricing",
-    link: "/pricing",
+    label: "Topics",
+    link: "/",
     class: "mr-6 hover:text-stone-900",
     openInNewTab: false,
   },
   {
-    label: "Call us: 0789200000",
-    link: "tel:0789200000",
+    label: "Training",
+    link: "/",
     class: "mr-6 hover:text-stone-900",
     openInNewTab: false,
   },
   {
-    label: "Support",
-    link: "/contact",
+    label: "Community",
+    link: "/",
+    class: "mr-6 hover:text-stone-900",
+    openInNewTab: false,
+  },
+  {
+    label: "Resources",
+    link: "/",
     class: "mr-6 hover:text-stone-900",
     openInNewTab: false,
   },
@@ -92,13 +98,27 @@ export default function Navbar() {
             return (
               <li
                 key={"mainnavLink" + index}
+                // className={"self-center px-2 hidden lg:block"}
                 className={
-                  index == 2
+                  index == 0
                     ? "ml-auto self-center px-2 hidden lg:block"
                     : "self-center px-2 hidden lg:block"
                 }
+                // className={
+                //   index == 2
+                //     ? "ml-auto self-center px-2 hidden lg:block"
+                //     : "self-center px-2 hidden lg:block"
+                // }
               >
-                {index == 4 ? (
+                <NavLink
+                  label={item.label}
+                  class={
+                    "ms-3 px-6 hover:border-b-2 hover:pb-2 border-black text-black"
+                  }
+                  link={item.link}
+                  openInNewTab={item.openInNewTab}
+                ></NavLink>
+                {/* {index == 4 ? (
                   <Menu>
                     <MenuTrigger>
                       <div className="group">
@@ -138,7 +158,7 @@ export default function Navbar() {
                     link={item.link}
                     openInNewTab={item.openInNewTab}
                   ></NavLink>
-                )}
+                )} */}
               </li>
             );
           })}

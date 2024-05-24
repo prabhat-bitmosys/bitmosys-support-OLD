@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.home-landing {
+  background: rgb(231, 241, 250);
+}
